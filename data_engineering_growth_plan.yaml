@@ -3,46 +3,198 @@ project:
   version: v0.1
   owner: Andrea Gagna
   timeframe: 2025-2028
-  motto: "Clarity in thought, beauty in presence, love in action"
-  description: >
-    A multi-year progression through data-engineering mastery,
-    uniting reading, experimentation, and creation.
+  motto: Clarity in thought, beauty in presence, love in action
+  description: 'A multi-year progression through data-engineering mastery, uniting
+    reading, experimentation, and creation.
 
+    '
 pillars:
-  - {id: I,   name: Foundations & Craft}
-  - {id: II,  name: Data Systems & Infrastructure}
-  - {id: III, name: Streaming & Scalability}
-  - {id: IV,  name: Intelligence & Lifecycle Integration}
-
-# Add books as you populate Year 1. Example shape only (do not keep this example when adding real entries).
-# books:
-#   - id: DE01
-#     pillar: I
-#     title: "Example Book Title"
-#     author: "Author Name"
-#     importance: 0
-#     relevance: 0
-#     breadth: 0
-#     effort_weeks: 0
-#     opi: 0.0
-#     competency: "Short competency phrase"
-#     artifact: "Intended artifact"
-#     suggested_next: "Another title id"
-#     status: {started: null, completed: null}
-#     notes: |
-#       Any notes you want to keep.
-
-books: []
-
-artifacts: []
-
+- id: I
+  name: Foundations & Craft
+- id: II
+  name: Data Systems & Infrastructure
+- id: III
+  name: Streaming & Scalability
+- id: IV
+  name: Intelligence & Lifecycle Integration
+books:
+- id: DE01
+  pillar: I
+  title: The Pragmatic Programmer
+  author: Andrew Hunt & David Thomas
+  importance: 5
+  relevance: 4
+  breadth: 4
+  effort_weeks: 4
+  opi: 4.4
+  competency: Software craft and debugging mindset
+  artifact: Engineering-Ethos manifesto (Markdown)
+  suggested_next: DE02
+  status:
+    started: null
+    completed: null
+  notes: Read reflectively; apply to daily refactors.
+- id: DE02
+  pillar: I
+  title: Accelerate
+  author: Nicole Forsgren, Jez Humble, Gene Kim
+  importance: 5
+  relevance: 5
+  breadth: 3
+  effort_weeks: 5
+  opi: 4.6
+  competency: DevOps flow metrics, DORA, delivery performance
+  artifact: CI/CD metrics dashboard (lightweight)
+  suggested_next: DE03
+  status:
+    started: null
+    completed: null
+  notes: Instrument one real pipeline with deploy frequency & lead time.
+- id: DE03
+  pillar: II
+  title: Fundamentals of Data Engineering (2nd ed.)
+  author: Joe Reis & Matt Housley
+  importance: 5
+  relevance: 5
+  breadth: 4
+  effort_weeks: 6
+  opi: 4.8
+  competency: End-to-end data lifecycle mapping
+  artifact: GaiaFlow-aligned core dataflow prototype
+  suggested_next: DE04
+  status:
+    started: null
+    completed: null
+  notes: Translate chapters into GaiaFlow principles and interfaces.
+- id: DE04
+  pillar: II
+  title: The Data Warehouse Toolkit
+  author: Ralph Kimball & Margy Ross
+  importance: 5
+  relevance: 4
+  breadth: 5
+  effort_weeks: 8
+  opi: 4.6
+  competency: Dimensional modeling & ETL design
+  artifact: Dimensional model schema + example ETL mappings
+  suggested_next: DE05
+  status:
+    started: null
+    completed: null
+  notes: Model one domain end-to-end with fact & dimension tables.
+- id: DE05
+  pillar: II
+  title: Designing Data-Intensive Applications
+  author: Martin Kleppmann
+  importance: 5
+  relevance: 5
+  breadth: 5
+  effort_weeks: 10
+  opi: 5.0
+  competency: Distributed systems semantics & data models
+  artifact: Architecture notebook on consistency & state
+  suggested_next: DE06
+  status:
+    started: null
+    completed: null
+  notes: Focus on chapters about replication, partitioning, streams.
+- id: DE06
+  pillar: III
+  title: 'Spark: The Definitive Guide'
+  author: Bill Chambers & Matei Zaharia
+  importance: 5
+  relevance: 5
+  breadth: 4
+  effort_weeks: 8
+  opi: 4.8
+  competency: Distributed processing with Spark (core + SQL)
+  artifact: Spark ETL pipeline repo (ingest → transform → load)
+  suggested_next: DE07
+  status:
+    started: null
+    completed: null
+  notes: Deliver one real pipeline with tests and docs.
+- id: DE07
+  pillar: III
+  title: 'Kafka: The Definitive Guide'
+  author: Gwen Shapira, Neha Narkhede, Todd Palino
+  importance: 5
+  relevance: 4
+  breadth: 4
+  effort_weeks: 8
+  opi: 4.6
+  competency: Event-driven design, topics, consumer groups
+  artifact: Kafka → Exasol streaming demo + ops notes
+  suggested_next: DE08
+  status:
+    started: null
+    completed: null
+  notes: 'Emphasize operational topics: retention, partitions, rebalancing.'
+artifacts:
+- id: A01
+  name: Engineering Ethos & CI Metrics
+  related_books:
+  - DE01
+  - DE02
+  repo: (link to be added)
+  type: docs+notebook
+  description: A concise manifesto for engineering craft and a tiny DORA metrics dashboard.
+  status: planned
+  proof: README + dashboard screenshot
+- id: A02
+  name: GaiaFlow Core Dataflow
+  related_books:
+  - DE03
+  - DE04
+  - DE05
+  repo: (link to be added)
+  type: repo
+  description: Core dataflow prototype aligned to Fundamentals, Kimball, and DDIA
+    insights.
+  status: planned
+  proof: Working DAG + tests + doc
+- id: A03
+  name: Spark & Kafka Integration Demo
+  related_books:
+  - DE06
+  - DE07
+  repo: (link to be added)
+  type: repo
+  description: Spark ETL with Kafka ingestion and Exasol sink; notes on reliability
+    and ops.
+  status: planned
+  proof: Pipeline run log + README
 reviews:
   cadence_weeks: 6
-  checkpoints: []
-
+  checkpoints:
+  - id: R01
+    date: '2025-11-10'
+    summary: Kickoff & craft baseline
+    insights: []
+    next_focus: Establish CI metrics
+  - id: R02
+    date: '2025-12-22'
+    summary: Mid-Q1 review
+    insights: []
+    next_focus: Complete Q1 deliverables
+  - id: R03
+    date: '2026-02-02'
+    summary: Q1 retrospective
+    insights: []
+    next_focus: Q2 systems
+  - id: R04
+    date: '2026-03-23'
+    summary: Mid-Q2 review
+    insights: []
+    next_focus: Dimensional model demo
+  - id: R05
+    date: '2026-05-18'
+    summary: Q2 retrospective
+    insights: []
+    next_focus: DDIA + Spark
 metrics:
-  total_books: 0
+  total_books: 7
   books_completed: 0
-  avg_opi: 0.0
-  total_artifacts: 0
+  avg_opi: 4.69
+  total_artifacts: 3
   progress_pct: 0
