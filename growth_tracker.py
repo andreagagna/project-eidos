@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-import argparse, sys, yaml, pathlib
+import argparse
+import sys
+import yaml
+import pathlib
 
 PLAN_PATH = pathlib.Path(__file__).parent / "data_engineering_growth_plan.yaml"
+
 
 def load_plan():
     if not PLAN_PATH.exists():
@@ -9,6 +13,7 @@ def load_plan():
         sys.exit(1)
     with open(PLAN_PATH, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
+
 
 def cmd_summary():
     plan = load_plan()
@@ -23,8 +28,9 @@ def cmd_summary():
     print(f"Artifacts: {metrics.get('total_artifacts', len(artifacts))}")
     print(f"Progress (%): {metrics.get('progress_pct', 0)}")
     print("\nPillars:")
-    for p in plan.get('pillars', []):
+    for p in plan.get("pillars", []):
         print(f"  - {p.get('id')}: {p.get('name')}")
+
 
 def cmd_list_books():
     plan = load_plan()
@@ -35,7 +41,10 @@ def cmd_list_books():
     print("\nBooks")
     print("-" * 40)
     for b in books:
-        print(f"{b.get('id','?')}: {b.get('title','?')} — pillar {b.get('pillar','?')} (OPI {b.get('opi','?')})")
+        print(
+            f"{b.get('id', '?')}: {b.get('title', '?')} — pillar {b.get('pillar', '?')} (OPI {b.get('opi', '?')})"
+        )
+
 
 def main():
     parser = argparse.ArgumentParser(description="Eidos Growth Tracker")
@@ -49,6 +58,7 @@ def main():
         cmd_list_books()
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     main()
