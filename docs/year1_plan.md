@@ -26,3 +26,9 @@
 - A03 — Spark & Kafka Integration Demo
 
 > Principle: keep artifacts small, composable, and well-documented.
+
+### Design note
+Year 1 blends foundational learning with early exposure to distributed systems.
+Pure "foundations-only" sequencing was considered and rejected: early contact with
+scale keeps curiosity alive and grounds later design decisions.  
+The result is a balanced skeleton: craft → pipelines → distributed flow.

@@ -13,8 +13,6 @@ It turns books into skills, skills into artifacts, and artifacts into a living p
 - Lightweight tooling to render progress and generate quarterly views.
 - Placeholder folders for year‑one artifacts (to be linked with GaiaFlow work).
 
-> Motto: *Clarity in thought, beauty in presence, love in action.*
-
 ---
 
 ## Structure
