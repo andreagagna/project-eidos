@@ -1,0 +1,48 @@
+project:
+  name: Eidos
+  version: v0.1
+  owner: Andrea Gagna
+  timeframe: 2025-2028
+  motto: "Clarity in thought, beauty in presence, love in action"
+  description: >
+    A multi-year progression through data-engineering mastery,
+    uniting reading, experimentation, and creation.
+
+pillars:
+  - {id: I,   name: Foundations & Craft}
+  - {id: II,  name: Data Systems & Infrastructure}
+  - {id: III, name: Streaming & Scalability}
+  - {id: IV,  name: Intelligence & Lifecycle Integration}
+
+# Add books as you populate Year 1. Example shape only (do not keep this example when adding real entries).
+# books:
+#   - id: DE01
+#     pillar: I
+#     title: "Example Book Title"
+#     author: "Author Name"
+#     importance: 0
+#     relevance: 0
+#     breadth: 0
+#     effort_weeks: 0
+#     opi: 0.0
+#     competency: "Short competency phrase"
+#     artifact: "Intended artifact"
+#     suggested_next: "Another title id"
+#     status: {started: null, completed: null}
+#     notes: |
+#       Any notes you want to keep.
+
+books: []
+
+artifacts: []
+
+reviews:
+  cadence_weeks: 6
+  checkpoints: []
+
+metrics:
+  total_books: 0
+  books_completed: 0
+  avg_opi: 0.0
+  total_artifacts: 0
+  progress_pct: 0
