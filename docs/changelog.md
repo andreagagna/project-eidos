@@ -86,9 +86,17 @@ Chronological trace of every phase; repository now fully narrates its own emerge
 
 ---
 
-## [TBD] – Phase 5 · Execution Environment & Companion Tools
+## [2026-11-25] – Architecture practice and evidence
 
-**Planned**
+- Added a practice roadmap through May 2027 and a short weekly decision review. The original Year 1 schedule remains available.
+- Linked the first reflection and a modelling decision from another project in the YAML plan.
+- Updated the tracker to show linked evidence and calculate reading progress from the book records. Added installation instructions and regression tests.
+
+---
+
+## Earlier Phase 5 proposal · Execution Environment & Companion Tools
+
+**Deferred ideas**
 - Establish shared local environment (Python + Jupyter + Spark/Kafka lightweight setup).
 - Automate YAML → Markdown rendering (progress dashboards, reports).
 - Integrate `growth_tracker.py` with minimal web or notebook interface.

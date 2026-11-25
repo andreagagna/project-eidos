@@ -1,23 +1,17 @@
-# Quarterly Review — Template
+# Weekly decision review
 
-**Quarter:** Q_  
-**Dates:** YYYY-MM-DD → YYYY-MM-DD
+Use this where the work lives. A date, one link, and a few sentences are enough.
 
-## Highlights
--
+**Week of** YYYY-MM-DD · **Skill** __________
 
-## What deepened
--
+### What decision did I make?
 
-## What remains confusing
--
+I chose ___ because ___. The other option I considered was ___.
 
-## Artifacts & Proofs
-- [ ] Link 1
-- [ ] Link 2
+### What evidence tested it?
 
-## Decisions
--
+Link to the experiment, PR, or design review here. I expected ___. I observed ___.
 
-## Next 6-week focus
--
+### What would make me choose differently?
+
+If ___ changed, I would ___. The next thing I would test is ___.

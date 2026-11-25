@@ -1,5 +1,7 @@
 # Year 1 Roadmap — Eidos
 
+This is the original schedule and its proposed deliverables. For the current cycle, use the [architecture practice roadmap](roadmap.md).
+
 **Window:** 2025-11-10 → 2026-12-14 (buffers included)  
 **Cadence:** ~6 h/week · reviews every 6 weeks
 

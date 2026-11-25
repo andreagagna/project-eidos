@@ -4,10 +4,14 @@ project:
   owner: Andrea Gagna
   timeframe: 2025-2028
   motto: Clarity in thought, beauty in presence, love in action
-  description: 'A multi-year progression through data-engineering mastery, uniting
-    reading, experimentation, and creation.
-
-    '
+  description: Practice designing data systems and keep evidence of the decisions behind them.
+evidence:
+- skill: Data quality
+  demonstrates: Explains how software craft applies to schema design, validation, and lineage.
+  link: artifacts/Q1_craft/pragmatic_reflections_01.md
+- skill: Data modelling
+  demonstrates: Records why cinema-monitor switched from screenshots to structured SVG data and how the parser represents seats and rows.
+  link: https://github.com/andreagagna/cinema-monitor/blob/e891c7371b58bb91ba9cb1d176a3b168a129b517/docs/decisions.md#1-switch-from-screenshots-to-svg-parsing
 pillars:
 - id: I
   name: Foundations & Craft
@@ -52,7 +56,7 @@ books:
   notes: Instrument one real pipeline with deploy frequency & lead time.
 - id: DE03
   pillar: II
-  title: Fundamentals of Data Engineering (2nd ed.)
+  title: Fundamentals of Data Engineering
   author: Joe Reis & Matt Housley
   importance: 5
   relevance: 5
@@ -125,7 +129,7 @@ books:
   opi: 4.6
   competency: Event-driven design, topics, consumer groups
   artifact: Kafka → Exasol streaming demo + ops notes
-  suggested_next: DE08
+  suggested_next: null
   status:
     started: null
     completed: null
@@ -136,7 +140,7 @@ artifacts:
   related_books:
   - DE01
   - DE02
-  repo: (link to be added)
+  repo: null
   type: docs+notebook
   description: A concise manifesto for engineering craft and a tiny DORA metrics dashboard.
   status: planned
@@ -147,7 +151,7 @@ artifacts:
   - DE03
   - DE04
   - DE05
-  repo: (link to be added)
+  repo: null
   type: repo
   description: Core dataflow prototype aligned to Fundamentals, Kimball, and DDIA
     insights.
@@ -158,13 +162,14 @@ artifacts:
   related_books:
   - DE06
   - DE07
-  repo: (link to be added)
+  repo: null
   type: repo
   description: Spark ETL with Kafka ingestion and Exasol sink; notes on reliability
     and ops.
   status: planned
   proof: Pipeline run log + README
 reviews:
+  # Original Year 1 schedule. The current practice cycle is in docs/roadmap.md.
   cadence_weeks: 6
   checkpoints:
   - id: R01
@@ -192,9 +197,3 @@ reviews:
     summary: Q2 retrospective
     insights: []
     next_focus: DDIA + Spark
-metrics:
-  total_books: 7
-  books_completed: 0
-  avg_opi: 4.69
-  total_artifacts: 3
-  progress_pct: 0
