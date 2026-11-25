@@ -169,7 +169,7 @@ artifacts:
   status: planned
   proof: Pipeline run log + README
 reviews:
-  # Original Year 1 schedule. The current practice cycle is in docs/roadmap.md.
+  # Historical checkpoints from the original calendar. See docs/year1_plan.md for the self-paced stages.
   cadence_weeks: 6
   checkpoints:
   - id: R01

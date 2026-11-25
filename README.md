@@ -5,11 +5,11 @@
 *a lever of clarity, a filament of beauty—*  
 *until systems reveal their shape.*
 
-**Eidos** is a place to practice designing data systems and keep evidence of the decisions behind them. The current focus is to choose data models, reason about partial failures, and defend an architecture when its requirements change.
+**Eidos** is a place to practice designing data systems and keep evidence of the decisions behind them. The [Year 1 roadmap](docs/year1_plan.md) moves through craft, warehousing, distributed processing, and streaming at a pace that fits the time available.
 
-## Start with a decision
+## Using the roadmap
 
-1. Pick a problem from the [practice roadmap](docs/roadmap.md) or from a project you already work on. Write down your choice and the assumption it depends on.
+1. Pick up the book or exercise in your current stage. If it raises a question about a project you already work on, write down the choice you face and the assumption it depends on.
 2. Test the assumption with a few records, a counterexample, or a design review. Keep the work in the project where it belongs.
 3. Use the [weekly review](docs/review_template.md) to record what you learned. When you have something worth revisiting, append one entry under `evidence` in the [plan](data_engineering_growth_plan.yaml).
 
@@ -31,7 +31,7 @@ On Windows PowerShell, create the environment with `py -3 -m venv .venv` and act
 
 `summary` shows linked evidence first, then artifact and reading counts. To record a finished book, set its `status.completed` to the finish date (`YYYY-MM-DD`) in the plan. The tracker calculates reading progress as completed books divided by listed books. A reflection can count as evidence even while the book is in progress.
 
-Run the regression tests with `python -m unittest discover -s tests`. The [project overview](docs/eidos_readme.md) explains the learning philosophy, and the [original Year 1 plan](docs/year1_plan.md) preserves the reading sequence and proposed portfolio projects.
+Run the regression tests with `python -m unittest discover -s tests`. The [project overview](docs/eidos_readme.md) explains the learning philosophy.
 
 ---
 

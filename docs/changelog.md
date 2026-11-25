@@ -88,7 +88,7 @@ Chronological trace of every phase; repository now fully narrates its own emerge
 
 ## [2026-11-25] – Architecture practice and evidence
 
-- Added a practice roadmap through May 2027 and a short weekly decision review. The original Year 1 schedule remains available.
+- Refactored the four-stage Year 1 roadmap for self-paced study. Each stage pairs the original readings and portfolio projects with a design exercise. Added a short decision review and a link to the original calendar.
 - Linked the first reflection and a modelling decision from another project in the YAML plan.
 - Updated the tracker to show linked evidence and calculate reading progress from the book records. Added installation instructions and regression tests.
 

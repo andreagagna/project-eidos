@@ -5,11 +5,11 @@ It links readings → skills → artifacts, and keeps a public thread of thought
 
 - **Why**: To convert knowledge into elegant, testable systems.
 - **How**: Curated readings, deliberate practice, and small composable repos.
-- **When**: Multi-year horizon, with the current practice cycle running through May 2027.
+- **When**: Multi-year horizon, with Year 1 divided into four self-paced stages.
 
 ## Practice and review
 
-Choose a design question you can test within the time available. Keep evidence alongside the work, including work in other projects. Try a short weekly review and revisit the first design at the end of the cycle. The [practice roadmap](roadmap.md) gives a starting problem and suggested readings.
+The [Year 1 roadmap](year1_plan.md) pairs the original reading sequence with a design question in each stage. Keep evidence alongside the work, including work in other projects. Use a short review when you have a decision worth revisiting.
 
 ## Artifacts
 Keep them real and small: one clear problem, one clean solution, one README.
