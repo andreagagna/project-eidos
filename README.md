@@ -7,6 +7,8 @@
 
 **Eidos** is a place to practice designing data systems and keep evidence of the decisions behind them. The [Year 1 roadmap](docs/year1_plan.md) moves through craft, warehousing, distributed processing, and streaming at a pace that fits the time available.
 
+The [project brief](docs/project_brief.md) summarizes the scope, readings, and learning method, and describes the proposed hands-on companion.
+
 ## Using the roadmap
 
 1. Pick up the book or exercise in your current stage. If it raises a question about a project you already work on, write down the choice you face and the assumption it depends on.
