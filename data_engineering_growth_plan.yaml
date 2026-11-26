@@ -1,13 +1,57 @@
 project:
   name: Eidos
-  version: v0.1
+  version: v0.2
   owner: Andrea Gagna
-  timeframe: 2025-2028
+  timeframe: 2026-2028
   motto: Clarity in thought, beauty in presence, love in action
-  description: 'A multi-year progression through data-engineering mastery, uniting
-    reading, experimentation, and creation.
+  description: Practice designing data systems and keep evidence of the decisions behind them.
+  year1_roadmap: docs/year1_plan.md
 
-    '
+reviews:
+  cadence: Review a decision while it is fresh. Revisit each stage when you have evidence for its question.
+  template: docs/review_template.md
+  # Fill in review_link with a local path or a permalink when you record the review.
+  checkpoints:
+  - id: craft-flow
+    stage: Craft & Flow
+    books: [DE01, DE02]
+    artifact: A01
+    ready_when: You have a before-and-after example of a refactor and a timeline from commit to deployment for one change.
+    question: Where did the change spend the most time waiting, and what would you measure after improving that step?
+    review_link: null
+  - id: systems-warehousing
+    stage: Systems & Warehousing
+    books: [DE03, DE04]
+    artifact: A02
+    ready_when: A source-to-consumer sketch and example rows show how a late correction reaches a report.
+    question: Can your fact table reproduce yesterday's reported value and today's corrected value?
+    review_link: null
+  - id: distributed-processing
+    stage: Distributed Processing
+    books: [DE05, DE06]
+    artifact: A03
+    ready_when: >-
+      You have predicted the totals, stopped a Spark batch after writing its output but before recording its checkpoint,
+      and replayed the input.
+    question: Do the observed totals match the prediction, and which recovery assumption explains the result?
+    review_link: null
+  - id: streaming-integration
+    stage: Streaming Integration
+    books: [DE07]
+    optional_reading: Streaming Systems
+    artifact: A03
+    ready_when: You have set a freshness target, recorded recovery in the Kafka-to-Exasol pipeline, and tried the design on another dataset.
+    question: Would scheduled batches meet the target, and which assumption changed when you tried the other dataset?
+    review_link: null
+
+evidence:
+- skill: Data quality
+  demonstrates: Explains how software craft applies to schema design, validation, and lineage.
+  link: artifacts/Q1_craft/pragmatic_reflections_01.md
+- skill: Data modelling
+  demonstrates: Records why cinema-monitor switched from screenshots to structured SVG data and how the parser represents seats and rows.
+  link: https://github.com/andreagagna/cinema-monitor/blob/e891c7371b58bb91ba9cb1d176a3b168a129b517/docs/decisions.md#1-switch-from-screenshots-to-svg-parsing
+
 pillars:
 - id: I
   name: Foundations & Craft
@@ -17,6 +61,7 @@ pillars:
   name: Streaming & Scalability
 - id: IV
   name: Intelligence & Lifecycle Integration
+
 books:
 - id: DE01
   pillar: I
@@ -25,15 +70,15 @@ books:
   importance: 5
   relevance: 4
   breadth: 4
-  effort_weeks: 4
   opi: 4.4
-  competency: Software craft and debugging mindset
-  artifact: Engineering-Ethos manifesto (Markdown)
+  competency: Recognize duplicated work and explain a change that makes it easier to maintain.
   suggested_next: DE02
   status:
-    started: null
+    started: null  # The Week 1 reflection records reading progress, but gives no start date.
     completed: null
-  notes: Read reflectively; apply to daily refactors.
+  notes: >-
+    The Week 1 reflection covers the preface and chapter 1. Resume with its pledge:
+    refactor or document one piece of duplicated work and save a before-and-after example for the Engineering Ethos note.
 - id: DE02
   pillar: I
   title: Accelerate
@@ -41,31 +86,27 @@ books:
   importance: 5
   relevance: 5
   breadth: 3
-  effort_weeks: 5
   opi: 4.6
-  competency: DevOps flow metrics, DORA, delivery performance
-  artifact: CI/CD metrics dashboard (lightweight)
+  competency: Use delivery measurements to choose an improvement.
   suggested_next: DE03
   status:
     started: null
     completed: null
-  notes: Instrument one real pipeline with deploy frequency & lead time.
+  notes: Trace one change from commit to deployment. Use the main source of delay to pick the first measure for the CI/CD dashboard.
 - id: DE03
   pillar: II
-  title: Fundamentals of Data Engineering (2nd ed.)
+  title: Fundamentals of Data Engineering
   author: Joe Reis & Matt Housley
   importance: 5
   relevance: 5
   breadth: 4
-  effort_weeks: 6
   opi: 4.8
-  competency: End-to-end data lifecycle mapping
-  artifact: GaiaFlow-aligned core dataflow prototype
+  competency: Explain how a record travels from source to consumer.
   suggested_next: DE04
   status:
     started: null
     completed: null
-  notes: Translate chapters into GaiaFlow principles and interfaces.
+  notes: Sketch how GaiaFlow handles one sensor reading, then trace a revised measurement through the same path.
 - id: DE04
   pillar: II
   title: The Data Warehouse Toolkit
@@ -73,15 +114,13 @@ books:
   importance: 5
   relevance: 4
   breadth: 5
-  effort_weeks: 8
   opi: 4.6
-  competency: Dimensional modeling & ETL design
-  artifact: Dimensional model schema + example ETL mappings
+  competency: Choose the grain of a fact table and model corrections explicitly.
   suggested_next: DE05
   status:
     started: null
     completed: null
-  notes: Model one domain end-to-end with fact & dimension tables.
+  notes: Use two readings and one correction to test historical and current values. To explore indexing, compare query plans and measure the cost on writes.
 - id: DE05
   pillar: II
   title: Designing Data-Intensive Applications
@@ -89,15 +128,13 @@ books:
   importance: 5
   relevance: 5
   breadth: 5
-  effort_weeks: 10
   opi: 5.0
-  competency: Distributed systems semantics & data models
-  artifact: Architecture notebook on consistency & state
+  competency: Reason about partial failure and repeated delivery.
   suggested_next: DE06
   status:
     started: null
     completed: null
-  notes: Focus on chapters about replication, partitioning, streams.
+  notes: Predict what happens when a worker stops after writing output and before recording its checkpoint. Save the prediction for the Spark test.
 - id: DE06
   pillar: III
   title: 'Spark: The Definitive Guide'
@@ -105,15 +142,13 @@ books:
   importance: 5
   relevance: 5
   breadth: 4
-  effort_weeks: 8
   opi: 4.8
-  competency: Distributed processing with Spark (core + SQL)
-  artifact: Spark ETL pipeline repo (ingest → transform → load)
+  competency: Test a Spark pipeline's recovery behavior with repeatable input.
   suggested_next: DE07
   status:
     started: null
     completed: null
-  notes: Deliver one real pipeline with tests and docs.
+  notes: Replay the same records after an interrupted run. Compare totals with the prediction and document the recovery choice.
 - id: DE07
   pillar: III
   title: 'Kafka: The Definitive Guide'
@@ -121,80 +156,45 @@ books:
   importance: 5
   relevance: 4
   breadth: 4
-  effort_weeks: 8
   opi: 4.6
-  competency: Event-driven design, topics, consumer groups
-  artifact: Kafka → Exasol streaming demo + ops notes
-  suggested_next: DE08
+  competency: Choose between scheduled batches and continuous ingestion for a stated freshness target.
+  suggested_next: null
   status:
     started: null
     completed: null
-  notes: 'Emphasize operational topics: retention, partitions, rebalancing.'
+  notes: Trace an interrupted Kafka-to-Exasol run through recovery. Use another dataset to test where the design stops fitting.
+
 artifacts:
 - id: A01
   name: Engineering Ethos & CI Metrics
   related_books:
   - DE01
   - DE02
-  repo: (link to be added)
+  repo: null
   type: docs+notebook
-  description: A concise manifesto for engineering craft and a tiny DORA metrics dashboard.
+  description: Engineering Ethos note grounded in a real change, plus a CI/CD mini-dashboard for one delivery decision.
   status: planned
-  proof: README + dashboard screenshot
+  proof: A before-and-after example, a commit-to-deployment timeline, and the dashboard measure chosen from that trace.
 - id: A02
   name: GaiaFlow Core Dataflow
   related_books:
   - DE03
   - DE04
-  - DE05
-  repo: (link to be added)
+  repo: null
   type: repo
-  description: Core dataflow prototype aligned to Fundamentals, Kimball, and DDIA
-    insights.
+  description: Source-to-consumer dataflow and a dimensional model for corrected GaiaFlow measurements.
   status: planned
-  proof: Working DAG + tests + doc
+  proof: Dataflow sketch, example rows at the stated grain, and query results before and after a correction.
 - id: A03
   name: Spark & Kafka Integration Demo
   related_books:
+  - DE05
   - DE06
   - DE07
-  repo: (link to be added)
+  repo: null
   type: repo
-  description: Spark ETL with Kafka ingestion and Exasol sink; notes on reliability
-    and ops.
+  description: A Spark batch pipeline extended with Kafka ingestion, an Exasol sink, and an orchestration DAG.
   status: planned
-  proof: Pipeline run log + README
-reviews:
-  cadence_weeks: 6
-  checkpoints:
-  - id: R01
-    date: '2025-11-10'
-    summary: Kickoff & craft baseline
-    insights: []
-    next_focus: Establish CI metrics
-  - id: R02
-    date: '2025-12-22'
-    summary: Mid-Q1 review
-    insights: []
-    next_focus: Complete Q1 deliverables
-  - id: R03
-    date: '2026-02-02'
-    summary: Q1 retrospective
-    insights: []
-    next_focus: Q2 systems
-  - id: R04
-    date: '2026-03-23'
-    summary: Mid-Q2 review
-    insights: []
-    next_focus: Dimensional model demo
-  - id: R05
-    date: '2026-05-18'
-    summary: Q2 retrospective
-    insights: []
-    next_focus: DDIA + Spark
-metrics:
-  total_books: 7
-  books_completed: 0
-  avg_opi: 4.69
-  total_artifacts: 3
-  progress_pct: 0
+  proof: >-
+    For the batch stage, keep the runnable ETL, a replay test, and the recovery decision.
+    For streaming, add the DAG, an interruption and recovery log, and a note on how another dataset changed the design.
